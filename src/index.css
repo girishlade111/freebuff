@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Theme Variables ── */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f7f8;
+  --bg-tertiary: #efefef;
+  --bg-hover: rgba(0, 0, 0, 0.04);
+  --bg-active: rgba(0, 0, 0, 0.07);
+  --text-primary: #1a1a1a;
+  --text-secondary: #555555;
+  --text-muted: #999999;
+  --border-color: #e2e2e2;
+  --accent-color: #7c3aed;
+  --accent-hover: #6d28d9;
+}
+
+.dark {
+  --bg-primary: #1e1e1e;
+  --bg-secondary: #252526;
+  --bg-tertiary: #2d2d2d;
+  --bg-hover: rgba(255, 255, 255, 0.06);
+  --bg-active: rgba(255, 255, 255, 0.1);
+  --text-primary: #e0e0e0;
+  --text-secondary: #aaaaaa;
+  --text-muted: #666666;
+  --border-color: #3e3e3e;
+  --accent-color: #8b5cf6;
+  --accent-hover: #a78bfa;
+}
+
+/* ── Base Reset ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar Styling ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-muted);
+}
+
+/* ── Selection ── */
+::selection {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* ── Focus Ring ── */
+:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Titlebar drag region (Tauri) ── */
+[data-tauri-drag-region] {
+  -webkit-app-region: drag;
+}
+
+[data-tauri-drag-region] button,
+[data-tauri-drag-region] input {
+  -webkit-app-region: no-drag;
+}
+
+/* ── Obsidian Syntax: WikiLinks ── */
+.cm-obsidian-link {
+  color: var(--accent-color);
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 0 2px;
+  transition: background-color 0.15s;
+}
+.cm-obsidian-link:hover {
+  background-color: rgba(124, 58, 237, 0.1);
+  text-decoration: underline;
+}
+.cm-obsidian-link-badge {
+  font-size: 0.7em;
+  opacity: 0.5;
+  margin-left: 2px;
+  vertical-align: super;
+}
+
+/* ── Obsidian Syntax: Embeds ── */
+.cm-obsidian-embed {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-secondary);
+  background-color: var(--bg-tertiary);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-style: italic;
+}
+.cm-obsidian-embed-icon {
+  font-style: normal;
+  opacity: 0.6;
+  font-size: 0.85em;
+}
+
+/* ── Obsidian Syntax: Tags ── */
+.cm-obsidian-tag {
+  color: var(--accent-color);
+  opacity: 0.85;
+  border-radius: 3px;
+  padding: 0 2px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.cm-obsidian-tag:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
