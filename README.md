@@ -280,3 +280,7 @@ Please open an issue first for large changes so the design can be discussed.
 ---
 
 **FreeBuff** — your notes, your files, your machine.
+
+---
+
+Built by **Girish Lade** — [ladestack.in](https://ladestack.in)
